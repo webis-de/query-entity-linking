@@ -13,4 +13,5 @@ WORKDIR /query-entity-linking
 
 RUN mvn clean package
 
+ENTRYPOINT [ "java", "-jar", "/query-entity-linking/target/query-entity-linking-1.0-jar-with-dependencies.jar", "--input", "$inputDataset", "--output", "$outputDir" ]
 
