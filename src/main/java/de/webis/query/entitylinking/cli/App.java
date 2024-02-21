@@ -52,7 +52,7 @@ public class App implements Callable<Void> {
 
         for(final ObjectNode jsonNode: queries){
             final Set<Entity> entities =
-                    explicitEntityLinker.annotate(new Query(jsonNode.get("query").asText()));
+                    explicitEntityLinker.annotate(new Query(jsonNode.get("query").asText().toLowerCase()));
             System.out.println(jsonNode.get("query"));
             entities.forEach(System.out::println);
             jsonNode.putPOJO("entities", entities);
