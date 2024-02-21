@@ -1,15 +1,12 @@
-FROM maven:3.8.3-adoptopenjdk-15
+FROM registry.webis.de/code-lib/public-images/query-entity-linking:1.0
 LABEL authors="Marcel Gohsen"
 
-RUN apt update
+RUN rm -R /query-entity-linking/src \
+  && rm -R /query-entity-linking/target \
+  && rm /query-entity-linking/pom.xml
 
 ADD src /query-entity-linking/src
 ADD pom.xml /query-entity-linking/
-
-ADD data/persistent/entity-commonness /query-entity-linking/data/persistent/entity-commonness
-ADD data/persistent/wiki-entity-index /query-entity-linking/data/persistent/wiki-entity-index
-
-WORKDIR /query-entity-linking
 
 RUN mvn clean package
 
