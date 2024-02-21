@@ -51,8 +51,7 @@ jobs:
           	TIRA_DOCKER_FILE=Dockerfile \
           	TIRA_DOCKER_PATH=/ \
           	>> $GITHUB_ENV
-           echo "\nIMAGE_TAG=registry.webis.de/code-research/tira/tira-user-marcel-gohsen/query-entity-linking:1.0" >> $GITHUB_ENV
       - name: Build, test, and upload image
         run: |
-          docker build -t ${{ env.IMAGE_TAG }} ${{ github.workspace }}/${{ inputs.dockerpath }}
-          tira-run --input-directory src/test/resources/cw09-input/ --image ${{ env.IMAGE_TAG }} --push true
+          docker build -t registry.webis.de/code-research/tira/tira-user-marcel-gohsen/query-entity-linking:1.0 ${{ github.workspace }}
+          tira-run --input-directory src/test/resources/cw09-input/ --image registry.webis.de/code-research/tira/tira-user-marcel-gohsen/query-entity-linking:1.0 --push true
