@@ -50,7 +50,8 @@ jobs:
           	TIRA_CODE_REPOSITORY_ID=${{ secrets.TIRA_CODE_REPOSITORY_ID }} \
           	TIRA_DOCKER_FILE=Dockerfile \
           	TIRA_DOCKER_PATH=/ \
-          	>> $GITHUB_ENV 
+          	>> $GITHUB_ENV
+           echo "\nIMAGE_TAG=registry.webis.de/code-research/tira/tira-user-marcel-gohsen/query-entity-linking:1.0" >> $GITHUB_ENV
       - name: Build, test, and upload image
         run: |
           docker build -t ${{ env.IMAGE_TAG }} ${{ github.workspace }}/${{ inputs.dockerpath }}
