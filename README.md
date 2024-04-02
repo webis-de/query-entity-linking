@@ -26,3 +26,18 @@ Please cite the following work when using this query entity linker.
   year =                     2022
 }
 ```
+
+If you use query entity linking with TIREx please also cite the following paper. 
+
+```bibtex
+@InProceedings{gohsen:2024,
+  author =                {Marcel Gohsen and Benno Stein},
+  booktitle =             {Proceedings of the first International Workshop on Open Web Search (WOWS 2024)},
+  keywords =              {ir, information retrieval, nlp, natural language processing, query, query-understanding},
+  month =                 mar,
+  publisher =             {CEUR Workshop Proceedings},
+  site =                  {Glasgow, Scotland},
+  title =                 {{Integrating Query Interpretation Components into the Information Retrieval Experiment Platform}},
+  year =                  2024
+}
+```
